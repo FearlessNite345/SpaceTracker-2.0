@@ -1,44 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>My Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/custom.css">
+  <title>SpaceTracker</title>
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">My Website</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./about.html">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <div class="container my-5">
-    <div class="row">
-      <div class="col-md-6">
-        <h1>Welcome to My Website</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac mi vel dolor congue aliquet. Sed iaculis sapien eu massa feugiat, at sollicitudin eros efficitur. Integer molestie faucibus ante eu bibendum. Sed id aliquet massa. Integer maximus gravida ipsum, vel dictum dolor placerat eget. Integer rhoncus malesuada aliquet. Cras vulputate vel lorem nec rhoncus. Ut in velit eget purus consectetur malesuada. </p>
-      </div>
-      <div class="col-md-6">
-        <img src="./img/placeholder-image.jpg" alt="Placeholder image" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
 
-  <!-- Bootstrap JS -->
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="./img/logo.png" alt="Logo" width="50"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="./home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Next Launch -->
+  <section class="container-fluid bg-light py-5">
+    <div class="container">
+      <h2 class="mb-4">Next Launch</h2>
+      <div class="row g-4">
+
+        <!-- Launch Image -->
+        <div class="col-md-6">
+          <img src="./img/next-launch.jpg" class="img-fluid rounded" alt="Next Launch">
+        </div>
+
+        <!-- Launch Info -->
+        <div class="col-md-6">
+          <h3 id="nextLaunchName">Launch Name</h3>
+          <p>Scheduled for: April 30, 2023</p>
+          <p>Destination: Space</p>
+          <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis a libero ullamcorper
+            suscipit. Nulla facilisi.</p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#moreInfoModalNextLaunch">
+            More Info
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Upcoming Launches -->
+  <section class="container-fluid bg-light py-5">
+    <div class="container">
+      <h2 class="mb-4">Upcoming Launches</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <!-- Launch Card 1 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="./img/launch1.jpg" class="card-img-top" alt="Launch 1">
+            <div class="card-body">
+              <h5 class="card-title">Launch 1</h5>
+              <p class="card-text">Scheduled for: December 31, 2023</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moreInfoModal1">
+                More Info
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Launch Card 2 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="./img/launch2.jpg" class="card-img-top" alt="Launch 2">
+            <div class="card-body">
+              <h5 class="card-title">Launch 2</h5>
+              <p class="card-text">Scheduled for: January 15, 2024</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moreInfoModal2">
+                More Info
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Launch Card 3 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="./img/launch3.jpg" class="card-img-top" alt="Launch 3">
+            <div class="card-body">
+              <h5 class="card-title">Launch 3</h5>
+              <p class="card-text">Scheduled for: February 1, 2024</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moreInfoModal3">
+                More Info
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container-fluid bg-dark text-light py-3">
+    <p>SpaceTracker &copy; 2023</p>
+  </footer>
+  <!-- Bootstrap JavaScript -->
   <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
