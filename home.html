@@ -8,10 +8,14 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/custom.css">
-  <title>SpaceTracker</title>
+  <title>Loading...</title>
+  <link rel="stylesheet" href="./loading.css">
 </head>
 
 <body>
+  <div class="loading" id="loading">
+    <div class="loader"></div>
+  </div> 
 
   <!-- Header -->
   <header>
@@ -26,9 +30,6 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link active" href="./home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./about.html">About</a>
             </li>
           </ul>
         </div>
@@ -45,15 +46,15 @@
 
         <!-- Launch Image -->
         <div class="col-md-6">
-          <img src="./img/next-launch.jpg" class="img-fluid rounded" alt="Next Launch">
+          <!--<img src="./img/next-launch.jpg" class="img-fluid rounded" alt="Next Launch">-->
+          <h1 id="countdown">T-</h1>
         </div>
 
         <!-- Launch Info -->
         <div class="col-md-6">
           <h3 id="nextLaunchName">Launch Name</h3>
-          <p>Scheduled for: April 30, 2023</p>
-          <p>Destination: Space</p>
-          <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis a libero ullamcorper
+          <p id="nextLaunchDate">Scheduled for: </p>
+          <p id="nextLaunchDescription">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis a libero ullamcorper
             suscipit. Nulla facilisi.</p>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal"
             data-bs-target="#moreInfoModalNextLaunch">
@@ -124,6 +125,8 @@
   </footer>
   <!-- Bootstrap JavaScript -->
   <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- Loading Script -->
+  <script src="./index.js"></script>
 </body>
 
 </html>
