@@ -25,10 +25,36 @@ async function loadData(){
     launchDate.innerHTML = `Scheduled for: ${currentNextLaunch.date_str}`
 
     upcomingLaunches.forEach(launch => {
-        console.log(launch.name)
+      if(launch.name == currentNextLaunch.name) return;
+      createLaunchCard(launch.name, `Scheduled for: ${launch.date_str}`)
     });
 
     loading.style.display = "none"
+}
+
+function createLaunchCard(launchname, launchdate) {
+  const upcomingLaunchesList = document.getElementById("upcomingList")
+
+  const col = document.createElement("div")
+  col.classList.add(['col'])
+  const card = document.createElement("div")
+  card.classList.add('card', 'h-100')
+  col.appendChild(card)
+  const cardBody = document.createElement("div")
+  cardBody.classList.add("card-body")
+  card.appendChild(cardBody)
+
+  const name = document.createElement('h5')
+  name.classList.add('card-title')
+  name.innerHTML = launchname
+  cardBody.appendChild(name)
+
+  const date = document.createElement('p')
+  date.classList.add('card-text')
+  date.innerHTML = launchdate
+  cardBody.appendChild(date)
+
+  upcomingLaunchesList.appendChild(col)
 }
 
 setInterval(() => {
