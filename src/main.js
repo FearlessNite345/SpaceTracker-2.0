@@ -2,30 +2,36 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const axios = require('axios')
+require('dotenv').config({
+  path: `${__dirname}/dev.env`
+})
 
 // Create a new window and load the index.html file
 async function createWindow() {
   const mainWindow = new BrowserWindow({
-    width: 1250,
-    height: 703,
+    width: 1338,
+    height: 753,
     resizable: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   });
 
-  mainWindow.loadFile('home.html');
+  mainWindow.loadFile('./src/frontend/home.html');
 }
 
 async function loadAPIData() {
-  const res = await axios.get("https://fdo.rocketlaunch.live/json/launches/next/5")
+  const res = await axios.get("https://fdo.rocketlaunch.live/json/launches",
+    {
+      headers: { "Authorization": `Bearer ${process.env.token}` }
+    })
   const result = res.data
   return result
 }
 
 // Initialize the app and create the window when the app is ready
 app.whenReady().then(async () => {
-  ipcMain.handle('api:loadData', loadAPIData)
+  ipcMain.handle('api:loadAPIData', loadAPIData)
 
   createWindow();
 

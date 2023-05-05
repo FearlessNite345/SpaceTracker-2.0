@@ -1,9 +1,9 @@
 {
   "name": "spacetracker-2.0",
-  "productName": "SpaceTracker",
+  "productName": "SpaceTracker DevBuild",
   "version": "2.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder"
@@ -11,7 +11,9 @@
   "build": {
     "appId": "ST",
     "win": {
-      "target": ["nsis"]
+      "target": [
+        "nsis"
+      ]
     },
     "nsis": {
       "oneClick": false,
@@ -25,6 +27,7 @@
     "electron-builder": "^23.6.0"
   },
   "dependencies": {
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3"
   }
 }

@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="./css/custom.css">
+  <link rel="stylesheet" href="../../css/custom.css">
   <title>Loading...</title>
-  <link rel="stylesheet" href="./loading.css">
+  <link rel="stylesheet" href="./css/loading.css">
 </head>
 
 <body>
@@ -17,8 +17,24 @@
     <div class="loader"></div>
   </div> 
 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
   <!-- Next Launch -->
-  <section class="container-fluid bg-light py-5">
+  <section class="container-fluid bg-dark py-5 text-light">
     <div class="container">
       <h2 class="mb-4">Next Launch</h2>
       <div class="row g-4">
@@ -26,7 +42,7 @@
         <!-- Launch Image -->
         <div class="col-md-6">
           <!--<img src="./img/next-launch.jpg" class="img-fluid rounded" alt="Next Launch">-->
-          <h1 id="countdown">T-</h1>
+          <h3 id="countdown">T-</h1>
         </div>
 
         <!-- Launch Info -->
@@ -35,8 +51,7 @@
           <p id="nextLaunchDate">Scheduled for: </p>
           <p id="nextLaunchDescription">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis a libero ullamcorper
             suscipit. Nulla facilisi.</p>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#moreInfoModalNextLaunch">
+          <button type="button" class="btn btn-primary" onclick="showMoreInfo()">
             More Info
           </button>
         </div>
@@ -47,7 +62,7 @@
 
 
   <!-- Upcoming Launches -->
-  <section class="container-fluid bg-light py-5">
+  <section class="container-fluid bg-dark py-5">
     <div class="container">
       <h2 class="mb-4">Upcoming Launches</h2>
       <div class="row row-cols-1 row-cols-md-3 g-4" id="upcomingList">
@@ -68,11 +83,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="container-fluid bg-dark text-light py-3">
-    <p>SpaceTracker &copy; 2023</p>
-  </footer>
   <!-- Bootstrap JavaScript -->
   <script src="./js/bootstrap.bundle.min.js"></script>
   <!-- Loading Script -->

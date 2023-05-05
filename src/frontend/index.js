@@ -10,11 +10,11 @@ let upcomingLaunches = null
 loadData()
 
 setInterval(() => {
-    
+    console.log('10min passed')
 }, (1000 * 60) * 10);
 
 async function loadData(){
-    const data = await window.API.loadData()
+    const data = await window.API.loadAPIData()
     document.title = "SpaceTracker"
 
     currentNextLaunch = data.result[0]
@@ -26,19 +26,20 @@ async function loadData(){
 
     upcomingLaunches.forEach(launch => {
       if(launch.name == currentNextLaunch.name) return;
-      createLaunchCard(launch.name, `Scheduled for: ${launch.date_str}`)
+      createLaunchCard(launch)
     });
 
     loading.style.display = "none"
 }
 
-function createLaunchCard(launchname, launchdate) {
+function createLaunchCard(launch) {
   const upcomingLaunchesList = document.getElementById("upcomingList")
 
   const col = document.createElement("div")
   col.classList.add(['col'])
   const card = document.createElement("div")
-  card.classList.add('card', 'h-100')
+  card.classList.add('card', 'h-100', 'text-light')
+  card.style.backgroundColor = '#131517'
   col.appendChild(card)
   const cardBody = document.createElement("div")
   cardBody.classList.add("card-body")
@@ -46,15 +47,34 @@ function createLaunchCard(launchname, launchdate) {
 
   const name = document.createElement('h5')
   name.classList.add('card-title')
-  name.innerHTML = launchname
+  name.innerHTML = launch.name
   cardBody.appendChild(name)
 
   const date = document.createElement('p')
   date.classList.add('card-text')
-  date.innerHTML = launchdate
+  date.innerHTML = `Scheduled for: ${launch.date_str}`
   cardBody.appendChild(date)
 
+  /*launch.tags.forEach(tag => {    
+    const badge = document.createElement('span')
+    badge.classList.add('badge', 'bg-primary')
+    badge.innerHTML = tag.text
+    cardBody.appendChild(badge)
+  });*/
+
+  const moreInfoBtn = document.createElement('button')
+  moreInfoBtn.classList.add('btn', 'btn-primary')
+  moreInfoBtn.type = 'button'
+  moreInfoBtn.innerHTML = 'More Info'
+  moreInfoBtn.onclick = showMoreInfo
+  cardBody.appendChild(moreInfoBtn)
+
   upcomingLaunchesList.appendChild(col)
+}
+
+function showMoreInfo() {
+  const modal = document.getElementById('ModelInfo')
+  
 }
 
 setInterval(() => {
