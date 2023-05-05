@@ -1,4 +1,4 @@
-# SpaceTracker 2.0
+# SpaceTracker 2.0 (Name will change soon)
 
 ### Down below is the current state of the app
 
